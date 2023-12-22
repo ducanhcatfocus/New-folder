@@ -57,6 +57,25 @@ const codeController = {
     }
   },
 
+  getCodeProblemByTitle: async (req, res) => {
+    try {
+      const searchText = req.body.searchText;
+      console.log(searchText);
+      const codes = await CodeModel.find({
+        titleProblem: { $regex: searchText, $options: "i" },
+      });
+
+      if (!codes || codes.length === 0) {
+        return res.redirect("back");
+      }
+
+      res.render("home", { codes });
+    } catch (error) {
+      console.error(error);
+      return res.redirect("back");
+    }
+  },
+
   getCodeProblemByType: async (req, res) => {},
 
   updateCodeProblem: async (req, res) => {

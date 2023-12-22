@@ -13,5 +13,5 @@ router
   .route("/code/:id")
   .get(codeController.getCodeProblemById)
   .post(codeController.updateCodeProblem);
-
+router.route("/search").post(codeController.getCodeProblemByTitle);
 module.exports = router;

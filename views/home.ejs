@@ -47,8 +47,17 @@
   </head>
   <body>
    <h2 class="page-title">Code Dictionary</h2>
-<a class="edit" href="/home/add_code_problem"><i class="bi bi-plus-square"></i>Create Code Problem</a>
-
+    <form action="/home/search" method="post" id="formId">
+      <div class="form-group">
+        <input
+          type="text"
+          name="searchText"
+          class="form-control"
+          placeholder="Search"
+        />
+      </div>
+      <button class="btn btn-primary">Search</button>
+    </form>
 <table class="table">
     <thead>
         <tr>
